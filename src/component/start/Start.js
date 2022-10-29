@@ -3,12 +3,14 @@ import start from "./start.css";
 import { useLocation, Link} from "react-router-dom";
 
 
-function Start() {
+function Start({amount}) {
     const choise = (event) => {
         let parent = event.target.parentNode;
         let choise = Array.from(parent.parentNode.children);
         choise.forEach(element => {element.classList.remove('choise')});
         parent.classList.add('choise');
+        
+        amount(event.target.attributes.datatype.value)
     }
     const pick = (event) => {
         let parent = event.target.parentNode;
@@ -16,8 +18,8 @@ function Start() {
         pick.forEach(element => {element.classList.remove('pick')});
         event.target.classList.add('pick');
     }
-    let url = useLocation();
-    console.log(url)
+    // let url = useLocation();
+    // console.log(url)
     return(
     
         <div className="box">
@@ -26,10 +28,10 @@ function Start() {
                 <p>1-го хода</p>
                 <div className="colors">
                     <div className="choise">
-                        <button id="white" type="button" onClick={choise}></button>
+                        <button id="white" type="button" datatype="1" onClick={choise}></button>
                     </div>
                     <div>
-                        <button id="black"  type="button" onClick={choise}></button>
+                        <button id="black"  type="button" datatype="0" onClick={choise}></button>
                     </div>
                 </div>
             </form>

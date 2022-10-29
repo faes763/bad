@@ -1,4 +1,4 @@
-h1 {
+.go {
   text-align: center;
   margin-top: 55px;
   margin-bottom: 200px;
@@ -26,13 +26,13 @@ h1 {
   border: 0;
   position: relative;
  
-  background-color:  #fff;
+  background-color:  transparent;
 }
 .row:last-child div {
   border: 0;
   padding: 16px;
   /* left: 1px; */
-  background-color:  #fff;
+  background-color:  transparent;
 }
 .row:last-child  {
   position: relative;
@@ -41,7 +41,7 @@ h1 {
   
   right: -1px;
 }
-span {
+.container span {
   z-index: 2;
   position: absolute;
   top: -10px;
